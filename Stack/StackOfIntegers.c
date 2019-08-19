@@ -2,12 +2,24 @@
 #include<stdlib.h>
 
 #define MAX_SIZE 10
-#define INT_MIN (-217483647 - 1)
+#define INT_MIN (-217483647 - 1) // might be omitted
+
+/***********************************************/
+/*   [0] [1] [2] [3] [4] [5] [6] [7] [8] [9] = MAX_SIZE */
+/*   ---------------------------------------   */
+/*  |   |   |   |   |   |   |   |   |   |   |  */
+/*   ---------------------------------------   */
+/*        ^                                    */
+/*        |                                    */
+/*       top                                   */
+/***********************************************/
+
+/* For an  Educational purpose!, written by ng-n */
 
 struct Stack{
-	int top;
-	int capacity;
-	int *arr;
+	int top;      //a top of the stack
+	int capacity; //size of an array
+	int *arr;     // a pointer to an array
 };
 
 struct Stack *CreateStack(){
@@ -62,8 +74,8 @@ void DeleteStack(struct Stack *s){
 int main(void){
 
 	struct Stack *arr = NULL;
-	int len = 0, i, j, op, data;
-
+	int len = -1, i, op, data;
+	
 	printf("Stack implementation for integers\n");
 	printf("Select the stack operations: \n");
 	printf("1: Push\n");
@@ -106,7 +118,7 @@ int main(void){
 			
 			case 4:
 			{
-			printf("xiting...\n");
+			printf("Exiting...\n");
 			DeleteStack(arr);
 			printf("Done\n");
 			break;
