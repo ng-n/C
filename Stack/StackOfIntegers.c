@@ -18,8 +18,8 @@
 
 struct Stack{
 	int top;      //a top of the stack
-	int capacity; //size of an array
-	int *arr;     // a pointer to an array
+	int capacity; //a size of an array
+	int *arr;     //a pointer to an array
 };
 
 struct Stack *CreateStack(){
@@ -74,7 +74,7 @@ void DeleteStack(struct Stack *s){
 int main(void){
 
 	struct Stack *arr = NULL;
-	int len = -1, i, op, data;
+	int len, i, op, data;
 	
 	printf("Stack implementation for integers\n");
 	printf("Select the stack operations: \n");
@@ -90,39 +90,38 @@ int main(void){
 		switch(op)
 		{
 			case 1:
-			{
-			printf("Input an integer to be pushed: ");
-			scanf("%d", &data);
-			Push(arr, data);
-			printf("\n");
-			break;
-			}
+				printf("Input an integer to be pushed: ");
+				scanf("%d", &data);
+				Push(arr, data);
+				printf("\n");
+				break;
+			
 
 			case 2:
-			{
-			printf("Poping an element...\n");
-			data = Pop(arr);
-			printf("The element is poped: %d\n", data);
-			break;
-			}
+			
+				printf("Poping an element...\n");
+				data = Pop(arr);
+				printf("The element is poped: %d\n", data);
+				break;
+			
 
 			case 3:
-			{
-			printf("Displaying an array...\n");
-			len = arr->top;
-			for(i = 0; i < len+1; i++)
-				printf(" %d ", arr->arr[i]);
-			printf("\n");
-			break;
-			}
+			
+				printf("Displaying an array...\n");
+				len = arr->top;
+				for(i = 0; i < len+1; i++)
+					printf(" %d ", arr->arr[i]);
+				printf("\n");
+				break;
+			
 			
 			case 4:
-			{
-			printf("Exiting...\n");
-			DeleteStack(arr);
-			printf("Done\n");
-			break;
-			}
+			
+				printf("Exiting...\n");
+				DeleteStack(arr);
+				printf("Done\n");
+				break;
+			
 		}
 	}while(op != 4);
 	return 0;
